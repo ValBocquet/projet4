@@ -40,10 +40,9 @@ require 'model/home.php';
                 </li>
 
             </ul>
-            <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+
+            <a href="#" class="btn btn-outline-success my-2 my-sm-0" >Administration</a>
+
         </div>
     </nav>
 </header>
@@ -51,12 +50,23 @@ require 'model/home.php';
 <!-- Begin page content -->
 <main role="main" class="container">
     <h1 class="mt-5">Titre de la page</h1>
-    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet beatae dicta et hic illo incidunt, ipsa libero minus molestias perspiciatis quaerat quas quasi qui quisquam recusandae, vitae voluptatem voluptates voluptatum!</p>
+
+        <?php
+            while ($datas = $req->fetch()) {
+                ?><p class="lead"> <?= $datas['title']; ?> </p>
+
+    <p>
+        <?php
+                echo($datas['content']);
+            }
+        ?>
+
+    </p>
     <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
 
         <?php
 
-        var_dump($req);
+
         ?>
 
 </main>
