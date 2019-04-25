@@ -4,6 +4,7 @@ require 'model/home.php';
 
 ?>
 
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -50,24 +51,9 @@ require 'model/home.php';
 <!-- Begin page content -->
 <main role="main" class="container">
     <h1 class="mt-5">Titre de la page</h1>
+    <?php require 'vues/home.php'; ?>
 
-        <?php
-            while ($datas = $req->fetch()) {
-                ?><p class="lead"> <?= $datas['title']; ?> </p>
-
-    <p>
-        <?php
-                echo($datas['content']);
-            }
-        ?>
-
-    </p>
     <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
-
-        <?php
-
-
-        ?>
 
 </main>
 
