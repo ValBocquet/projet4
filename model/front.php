@@ -13,7 +13,8 @@ class Article {
         $pdo = connectionBdd();
         $req = $pdo->prepare('SELECT * FROM articles WHERE id= :id');
         $req->execute(['id' => $idGet]);
-        return $req;
+        $post = $req->fetch();
+        return $post;
     }
 }
 
