@@ -1,8 +1,7 @@
 <?php
 require 'database.php';
 
-class Article {
-/** METHODE APPELANT LES ARTICLES */
+
     function getPosts() {
         $pdo = connectionBdd();
         $req = $pdo->query('SELECT * FROM articles ORDER BY id DESC LIMIT 0,5');
@@ -16,6 +15,6 @@ class Article {
         $post = $req->fetch();
         return $post;
     }
-}
+
 
 

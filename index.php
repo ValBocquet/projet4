@@ -5,8 +5,29 @@ error_reporting(E_ALL);
 
 require 'controllers/front.php';
 
+
 if(!isset($_GET['action'])) {
     home();
-} elseif ($_GET['id'] > 0){
-    getPost();
+}
+
+/* if(isset($_GET['id']) && $_GET['id'] > 0) {
+    $post = getPost($_GET['id']);
+    require('views/article.php');
+} */
+
+if(isset($_GET['action'])) {
+    if ($_GET['action'] == 'home') {
+        home();
+    }
+    elseif ($_GET['action'] == 'getPost') {
+        if (isset($_GET['id']) && $_GET['id'] >0) {
+            articleOnly();
+        }
+        else{
+            echo 'Erreur : aucun identifiant de billet envoyé';
+        }
+    }
+}
+else {
+    home();
 }
