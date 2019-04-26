@@ -10,10 +10,6 @@ if(!isset($_GET['action'])) {
     home();
 }
 
-/* if(isset($_GET['id']) && $_GET['id'] > 0) {
-    $post = getPost($_GET['id']);
-    require('views/article.php');
-} */
 
 if(isset($_GET['action'])) {
     if ($_GET['action'] == 'home') {

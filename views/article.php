@@ -1,6 +1,6 @@
 <?php
-$title = 'Titre';
-var_dump($post);
+$title = $post['title'];
+
 ob_start();
 ?>
 
@@ -10,12 +10,12 @@ ob_start();
 
         <article class="center-relative">
             <h1 class="entry-title">
-                I like to reinvent myself
+                <?= $post['title']; ?>
             </h1>
-            <div class="entry-date published">February 12, 2016</div>
+            <div class="entry-date published"><?= $post['date_upload']; ?></div>
             <div class="clear"></div>
 
-
+                <?= $post['content']; ?>
             <div class="clear"></div>
         </article>
     </div>
