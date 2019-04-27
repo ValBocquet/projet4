@@ -1,6 +1,6 @@
 <?php
 $title = $post['title'];
-
+$dateUpload = date_format(new DateTime($post['date_upload']), 'd-m-Y');
 ob_start();
 ?>
 
@@ -10,9 +10,10 @@ ob_start();
 
         <article class="center-relative">
             <h1 class="entry-title">
+
                 <?= $post['title']; ?>
             </h1>
-            <div class="entry-date published"><?= $post['date_upload']; ?></div>
+            <div class="entry-date published"><?= $dateUpload; ?></div>
             <div class="clear"></div>
 
                 <?= $post['content']; ?>

@@ -26,6 +26,6 @@ while ($datas = $posts->fetch()) {
     </article>
 <?php
 }
-
+var_dump($datas);
 $content = ob_get_clean();
 require 'template.php'; ?>
