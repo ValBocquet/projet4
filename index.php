@@ -13,6 +13,16 @@ require 'controllers/front.php';
             echo 'Erreur : aucun identifiant de billet envoyé';
         }
 
-} else {
+} elseif ($_GET['action'] == 'addComment') {
+      if(isset($_GET['id']) && $_GET['id'] > 0) {
+          if (!empty($_POST['name']) && !empty($_POST['message'])) {
+              addComment($_GET['id'], $_POST['name'], $_POST['message']);
+          }
+          else {
+              echo 'Problème lors de l\'envoi';
+          }
+      }
+  }
+  else {
     home();
 }

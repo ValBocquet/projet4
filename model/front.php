@@ -15,6 +15,18 @@ require 'database.php';
         $post = $req->fetch();
         return $post;
     }
+    function getComments($postID) {
+        $pdo = connectionBdd();
+        $comments = $pdo->prepare('SELECT * FROM commentaires WHERE article_referent= :article_referent ORDER BY date_publish_comm DESC');
+        $comments->execute(['article_referent' => $postID]);
+        return $comments;
+    }
 
-
+    function postComment($postID, $name, $message) {
+        $pdo = connectionBdd();
+        $comments = $pdo->prepare('INSERT INTO commentaires(article_referent, date_publish_comm, name, message) VALUES
+(?, NOW(),? ,?)');
+        $affectedLines = $comments->execute(array($postID, $name, $message));
+        return $affectedLines;
+    }
 

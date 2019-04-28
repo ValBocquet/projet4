@@ -338,7 +338,10 @@ sub
 }
 
 /* COLUMNS */
-
+.commentaire {
+    width: 400px;
+    margin: auto;
+}
 .one,  .one_half,  .one_third,  .two_third,  .three_fourth, 
 .one_fourth{
     margin-right: 100px;
@@ -677,4 +680,10 @@ span.cbp-biprev:before {
 
 .no-js.backgroundsize .cbp-bislideshow li:first-child img {
     display: block;
+}
+
+/* maison */
+.commentaires {
+    text-align: center;
+    padding-bottom: 80px;
 }
