@@ -10,12 +10,12 @@
 
     <link rel="shortcut icon" href="public/images/favicon.png" />
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CLibre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css"  href='../public/css/clear.css' />
-    <link rel="stylesheet" type="text/css"  href='../public/css/common.css' />
-    <link rel="stylesheet" type="text/css"  href='../public/css/font-awesome.min.css' />
-    <link rel="stylesheet" type="text/css"  href='../public/css/carouFredSel.css' />
-    <link rel="stylesheet" type="text/css"  href='../public/css/sm-clean.css' />
-    <link rel="stylesheet" type="text/css"  href='../public/css/style.css' />
+    <link rel="stylesheet" type="text/css"  href='public/css/clear.css' />
+    <link rel="stylesheet" type="text/css"  href='public/css/common.css' />
+    <link rel="stylesheet" type="text/css"  href='public/css/font-awesome.min.css' />
+    <link rel="stylesheet" type="text/css"  href='public/css/carouFredSel.css' />
+    <link rel="stylesheet" type="text/css"  href='public/css/sm-clean.css' />
+    <link rel="stylesheet" type="text/css"  href='public/css/style.css' />
 
     <!--[if lt IE 9]>
     <script src="public/js/html5.js"></script>

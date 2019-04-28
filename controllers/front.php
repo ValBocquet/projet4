@@ -2,14 +2,13 @@
 require 'model/front.php';
 
 function home() {
-    $postManager = new Article();
-    $posts = $postManager->getPosts();
+    $posts = getPosts();
     require 'views/home.php';
 }
 
 function articleOnly() {
     if(isset($_GET['id']) && $_GET['id'] > 0) {
-        $post = getPost(id);
+        $post = getPost($_GET['id']);
         require 'views/article.php';
     }
 }

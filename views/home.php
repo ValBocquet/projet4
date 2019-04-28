@@ -13,7 +13,7 @@ while ($datas = $posts->fetch()) {
 
                                 <div class="entry-date published"><?= $dateUpload ?></div>
                                 <h2 class="entry-title">
-                                    <a href="views/article.php?id=<?= $datas['id'] ?>"><?= $datas['title'] ?></a>
+                                    <a href="index.php?id=<?= $datas['id']; ?>&action=getPost"><?= $datas['title'] ?></a>
                                 </h2>
                                 <div class="excerpt">
                                     <?php $excerpt = substr($datas['content'], 0, 250); ?>
