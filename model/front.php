@@ -1,4 +1,6 @@
 <?php
+namespace valentin\model\front;
+
 require 'database.php';
 
 class Manager

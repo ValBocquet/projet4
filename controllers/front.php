@@ -1,4 +1,5 @@
 <?php
+use \valentin\model\front\Manager;
 require 'model/front.php';
 
 function home() {

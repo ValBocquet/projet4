@@ -15,7 +15,7 @@
         <nav id="header-main-menu">
             <ul class="main-menu sm sm-clean">
                 <li><a href="index.php" class="current">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="views/administration.php">Administration</a></li>
                 <li><a href="scroll.html">Scroll</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
