@@ -15,7 +15,17 @@
         <nav id="header-main-menu">
             <ul class="main-menu sm sm-clean">
                 <li><a href="index.php" class="current">Home</a></li>
+                <?php if (!empty($_SESSION['name'])) {
+                    ?>
+                    <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
+
+                    <?php
+                } else {
+                    ?>
                 <li><a href="views/administration.php">Administration</a></li>
+<?php
+                }
+                ?>
                 <li><a href="scroll.html">Scroll</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>

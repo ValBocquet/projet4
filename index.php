@@ -1,4 +1,5 @@
 <?php
+session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -26,6 +27,7 @@ require 'controllers/back.php';
   } elseif ($_GET['action'] == "administration") {
       if(!empty($_POST['name']) && !empty($_POST['password'])) {
           if($_POST['name'] == "admin" && $_POST['password'] == "admin") {
+              $_SESSION['name'] = $_POST['name'];
               getArticlesInformations();
           }
           else {
@@ -35,6 +37,16 @@ require 'controllers/back.php';
       } else {
           echo 'il y a eu un problème lors de la connexion';
       }
+  }
+
+  elseif ($_GET['action'] == 'deleteArticle') {
+      if(!empty($_GET['id']) && $_GET['id'] > 0) {
+          deleteArticle($_GET['id']);
+          header('Location: index.php');
+      }
+  } elseif ($_GET['action'] == "deconnexion") {
+      session_destroy();
+      header('Location: index.php');
   }
   else {
     home();

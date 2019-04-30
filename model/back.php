@@ -10,4 +10,13 @@ class Manager {
         return $req;
     }
 
+    public function deleteArticle($id) {
+        $pdo = connectionBdd();
+        $req = $pdo->prepare('DELETE FROM articles WHERE id = :id');
+        $req->execute(array(
+            'id' => $_GET['id']
+        ));
+        return $req;
+    }
+
 }

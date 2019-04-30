@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -69,7 +67,7 @@
                         <td><?= $datas['title'];?> (id = <?= $datas['id'];?>)</td>
                         <td><a href="index.php?id=<?= $datas['id'];?>&action=getPost">Lire</a></td>
                         <td><a href="#"><i class="fas fa-pencil-alt"></i></a></td>
-                        <td><a href="#"><i class="far fa-trash-alt"></i></a></td>
+                        <td><a href="index.php?id=<?= $datas['id'];?>&action=deleteArticle"><i class="far fa-trash-alt"></i></a></td>
                     </tr>
                     </tbody>
                 </table>
