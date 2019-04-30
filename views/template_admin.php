@@ -8,7 +8,7 @@
 <meta name="author" content="Colorlib" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<link rel="shortcut icon" href="../public/images/favicon.png" />
+<link rel="shortcut icon" href="public/images/favicon.png" />
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CLibre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css"  href='public/css/clear.css' />
 <link rel="stylesheet" type="text/css"  href='public/css/common.css' />
@@ -16,7 +16,6 @@
 <link rel="stylesheet" type="text/css"  href='public/css/carouFredSel.css' />
 <link rel="stylesheet" type="text/css"  href='public/css/sm-clean.css' />
 <link rel="stylesheet" type="text/css"  href='public/css/style.css' />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 <!--[if lt IE 9]>
 <script src="public/js/html5.js"></script>
@@ -66,8 +65,8 @@
                     <tr>
                         <td><?= $datas['title'];?> (id = <?= $datas['id'];?>)</td>
                         <td><a href="index.php?id=<?= $datas['id'];?>&action=getPost">Lire</a></td>
-                        <td><a href="#"><i class="fas fa-pencil-alt"></i></a></td>
-                        <td><a href="index.php?id=<?= $datas['id'];?>&action=deleteArticle"><i class="far fa-trash-alt"></i></a></td>
+                        <td><a href="index.php?id=<?= $datas['id'];?>&action=modify"><img src="public/images/pencil-alt-solid.svg" id="pencil" alt="pencil"></a></td>
+                        <td><a href="index.php?id=<?= $datas['id'];?>&action=deleteArticle"><img src="public/images/trash-alt-solid.svg" alt="poubelle" id="trash"></a></td>
                     </tr>
                     </tbody>
                 </table>
@@ -86,14 +85,14 @@
 <!-- Footer -->
 
 <!--Load JavaScript-->
-<script type="text/javascript" src="../public/js/jquery.js"></script>
-<script type='text/javascript' src='../public/js/imagesloaded.pkgd.js'></script>
-<script type='text/javascript' src='../public/js/jquery.nicescroll.min.js'></script>
-<script type='text/javascript' src='../public/js/jquery.smartmenus.min.js'></script>
-<script type='text/javascript' src='../public/js/jquery.carouFredSel-6.0.0-packed.js'></script>
-<script type='text/javascript' src='../public/js/jquery.mousewheel.min.js'></script>
-<script type='text/javascript' src='../public/js/jquery.touchSwipe.min.js'></script>
-<script type='text/javascript' src='../public/js/jquery.easing.1.3.js'></script>
-<script type='text/javascript' src='../public/js/main.js'></script>
+<script type="text/javascript" src="public/js/jquery.js"></script>
+<script type='text/javascript' src='public/js/imagesloaded.pkgd.js'></script>
+<script type='text/javascript' src='public/js/jquery.nicescroll.min.js'></script>
+<script type='text/javascript' src='public/js/jquery.smartmenus.min.js'></script>
+<script type='text/javascript' src='public/js/jquery.carouFredSel-6.0.0-packed.js'></script>
+<script type='text/javascript' src='public/js/jquery.mousewheel.min.js'></script>
+<script type='text/javascript' src='public/js/jquery.touchSwipe.min.js'></script>
+<script type='text/javascript' src='public/js/jquery.easing.1.3.js'></script>
+<script type='text/javascript' src='public/js/main.js'></script>
 </body>
 </html>

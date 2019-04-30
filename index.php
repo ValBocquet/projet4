@@ -47,7 +47,17 @@ require 'controllers/back.php';
   } elseif ($_GET['action'] == "deconnexion") {
       session_destroy();
       header('Location: index.php');
-  }
+  } elseif ($_GET['action'] == 'modify') {
+      if(!empty($_GET['id']) && $_GET['id'] > 0) {
+          modifyArticle($_GET['id']);
+      }
+
+  } elseif ($_GET['action'] == 'validModif') {
+      if(!empty($_GET['id']) && $_GET['id'] > 0) {
+          valideModifArticle($_GET['id']);
+          header('Location: index.php?id='. $_GET['id'].'&action=getPost');
+        }
+      }
   else {
     home();
 }

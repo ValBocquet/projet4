@@ -13,3 +13,14 @@ function deleteArticle($id) {
     $delete = $Manager->deleteArticle($id);
     return 'Cest good';
 }
+
+function modifyArticle($id) {
+    $Manager = new Manager();
+    $modify = $Manager->modifyArticle($id);
+    require 'views/modify.php';
+}
+function valideModifArticle($id) {
+    $Manager = new Manager();
+    $validModif = $Manager->valideModifArticle($id);
+    return 'Ok';
+}

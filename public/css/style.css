@@ -1468,3 +1468,11 @@ table.blueTable tfoot .links a{
     padding: 2px 8px;
     border-radius: 5px;
 }
+
+#pencil, #trash {
+    width: 15px;
+}
+
+#pencil:hover, #trash:hover {
+    width: 16px;
+}
