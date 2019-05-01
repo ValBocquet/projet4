@@ -24,3 +24,15 @@ function valideModifArticle($id) {
     $validModif = $Manager->valideModifArticle($id);
     return 'Ok';
 }
+
+function createArticle() {
+    $Manager = new Manager();
+    $createArticle = $Manager->createArticle();
+    return 'Ok';
+}
+
+function moderateComments() {
+    $Manager = new Manager();
+    $moderateComments = $Manager->moderateComments();
+    require 'views/moderateComments.php';
+}

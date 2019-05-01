@@ -1476,3 +1476,7 @@ table.blueTable tfoot .links a{
 #pencil:hover, #trash:hover {
     width: 16px;
 }
+
+#createArticle {
+    text-align: center;
+}

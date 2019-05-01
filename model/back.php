@@ -39,4 +39,20 @@ class Manager {
         return $req;
     }
 
+    public function createArticle() {
+        $pdo = connectionBdd();
+        $req = $pdo->prepare('INSERT INTO articles (title, content, date_upload) VALUES (:title, :content, NOW())');
+        $req->execute(array(
+            'title' => $_POST['title'],
+            'content' => $_POST['mytextarea']
+        ));
+        return $req;
+    }
+
+    public function moderateComments() {
+        $pdo = connectionBdd();
+        $req = $pdo->query('SELECT * FROM commentaires ORDER BY id DESC');
+        return $req;
+    }
+
 }

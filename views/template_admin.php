@@ -46,7 +46,7 @@
             <div class="clear"></div>
             <div class="commentaires">
                 <h2>Administration</h2>
-                <p>Bonjour <?= $_POST['name']; ?></p>
+                <p>Bonjour <?= $_SESSION['name']; ?></p>
                 <?php
 
                 while($datas = $listPosts->fetch()) {
@@ -74,6 +74,10 @@
                 }
                 ?>
             </div>
+            <div id="createArticle">
+                <a href="views/create.php">Création d'un article</a>
+            </div>
+
 
             <div class="clear"></div>
 

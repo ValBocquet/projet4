@@ -34,7 +34,10 @@ require 'controllers/back.php';
               echo 'mauvaise combinaison de connexion';
           }
 
-      } else {
+      } elseif (!empty($_SESSION['name'])) {
+          getArticlesInformations();
+      }
+      else {
           echo 'il y a eu un problème lors de la connexion';
       }
   }
@@ -52,12 +55,25 @@ require 'controllers/back.php';
           modifyArticle($_GET['id']);
       }
 
+  } elseif ($_GET['action'] == 'comments') {
+      if (!empty($_SESSION['name'])) {
+          moderateComments();
+
+      } else {
+          header('Location: index.php');
+      }
   } elseif ($_GET['action'] == 'validModif') {
       if(!empty($_GET['id']) && $_GET['id'] > 0) {
           valideModifArticle($_GET['id']);
           header('Location: index.php?id='. $_GET['id'].'&action=getPost');
         }
+      } elseif ($_GET['action'] == 'createArticle') {
+      if (!empty($_POST['title']) && !empty($_POST['mytextarea'])) {
+          createArticle();
+          header('Location: index.php');
       }
+    }
+
   else {
     home();
 }
