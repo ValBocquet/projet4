@@ -25,6 +25,7 @@ ob_start();
                     ?>
                     <p><?= htmlspecialchars($comment['name'])?> le <?= $dateComm; ?> : </p>
                     <p><?= htmlspecialchars($comment['message'])?></p>
+                    <a href="index.php?action=danger&id=<?= $comment['id'];?>"><i class="fas fa-exclamation-triangle"></i></a>
                     <hr>
                 <?php
                 }

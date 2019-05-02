@@ -1,17 +1,16 @@
 <?php
-namespace valentin\model\back;
+require_once 'model/database.php';
 
-
-class Manager {
+class ArticlesManager extends Manager {
 
     public function getTitleArticle() {
-        $pdo = connectionBdd();
+        $pdo = Manager::connectionBdd();
         $req = $pdo->query('SELECT * FROM articles ORDER BY id DESC');
         return $req;
     }
 
     public function deleteArticle($id) {
-        $pdo = connectionBdd();
+        $pdo = Manager::connectionBdd();
         $req = $pdo->prepare('DELETE FROM articles WHERE id = :id');
         $req->execute(array(
             'id' => $_GET['id']
@@ -19,8 +18,10 @@ class Manager {
         return $req;
     }
 
+    
+
     public function modifyArticle($id) {
-        $pdo = connectionBdd();
+        $pdo = Manager::connectionBdd();
         $req = $pdo->prepare('SELECT * FROM articles WHERE id = :id');
         $req->execute(array(
             'id' => $_GET['id']
@@ -29,7 +30,7 @@ class Manager {
     }
 
     public function valideModifArticle($id) {
-        $pdo = connectionBdd();
+        $pdo = Manager::connectionBdd();
         $req = $pdo->prepare('UPDATE articles SET title = :title, content = :content, date_upload = NOW() WHERE id = :id');
         $req->execute(array(
             'title' => $_POST['title'],
@@ -40,7 +41,7 @@ class Manager {
     }
 
     public function createArticle() {
-        $pdo = connectionBdd();
+        $pdo = Manager::connectionBdd();
         $req = $pdo->prepare('INSERT INTO articles (title, content, date_upload) VALUES (:title, :content, NOW())');
         $req->execute(array(
             'title' => $_POST['title'],
@@ -48,11 +49,21 @@ class Manager {
         ));
         return $req;
     }
-
-    public function moderateComments() {
-        $pdo = connectionBdd();
-        $req = $pdo->query('SELECT * FROM commentaires ORDER BY id DESC');
+    function getPosts()
+    {
+        $pdo = Manager::connectionBdd();
+        $req = $pdo->query('SELECT * FROM articles ORDER BY id DESC LIMIT 0,5');
         return $req;
     }
+
+    function getPost($idGet)
+    {
+        $pdo = Manager::connectionBdd();
+        $req = $pdo->prepare('SELECT * FROM articles WHERE id= :id');
+        $req->execute(['id' => $idGet]);
+        $post = $req->fetch();
+        return $post;
+    }
+    
 
 }

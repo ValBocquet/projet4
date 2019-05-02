@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css"  href='public/css/carouFredSel.css' />
     <link rel="stylesheet" type="text/css"  href='public/css/sm-clean.css' />
     <link rel="stylesheet" type="text/css"  href='public/css/style.css' />
+    
 
     <!--[if lt IE 9]>
     <script src="public/js/html5.js"></script>
