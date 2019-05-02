@@ -40,7 +40,7 @@
     <div class="menu-right-part">
         <div class="logo-holder">
             <a href="index.html">
-                <img src="images/logo.png" alt="Suppablog WP">
+                <img src="public/images/logo.png" alt="Suppablog WP">
             </a>
         </div>
         <div class="toggle-holder">

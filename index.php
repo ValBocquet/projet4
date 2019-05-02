@@ -44,7 +44,7 @@ require 'controllers/back.php';
 
   elseif ($_GET['action'] == 'deleteArticle') {
       if(!empty($_GET['id']) && $_GET['id'] > 0) {
-          deleteArticle($_GET['id']);
+          deleteArticle(intval($_GET['id']));
           header('Location: index.php');
       }
   } elseif ($_GET['action'] == "deconnexion") {
@@ -68,11 +68,18 @@ require 'controllers/back.php';
           header('Location: index.php?id='. $_GET['id'].'&action=getPost');
         }
       } elseif ($_GET['action'] == 'createArticle') {
-      if (!empty($_POST['title']) && !empty($_POST['mytextarea'])) {
-          createArticle();
-          header('Location: index.php');
-      }
-    }
+            if (!empty($_POST['title']) && !empty($_POST['mytextarea'])) {
+            createArticle();
+            header('Location: index.php');
+            }
+        }
+        elseif($_GET['action'] == "newArticle") {
+            newArticle();
+        }
+
+        elseif($_GET['action'] == 'danger') {
+            dangerComment($_GET['id']);
+        }
 
   else {
     home();

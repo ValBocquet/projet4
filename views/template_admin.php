@@ -75,7 +75,7 @@
                 ?>
             </div>
             <div id="createArticle">
-                <a href="views/create.php">Création d'un article</a>
+                <a href="index.php?action=newArticle">Création d'un article</a>
             </div>
 
 
