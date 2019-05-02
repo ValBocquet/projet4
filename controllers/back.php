@@ -38,8 +38,14 @@ function createArticle() {
     return 'Ok';
 }
 
-function moderateComments() {
+/* function moderateComments() {
     $Manager = new CommentsManager();
     $moderateComments = $Manager->moderateComments();
+    require 'views/moderateComments.php';
+} */
+
+function afficherCommentsDanger() {
+    $Manager = new CommentsManager();
+    $moderateComments = $Manager->afficherDangerComment();
     require 'views/moderateComments.php';
 }

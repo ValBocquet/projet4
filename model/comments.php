@@ -12,22 +12,20 @@ class CommentsManager extends Manager
         return $req;
     } 
 
-    public function moderateComments() {
+    /* public function moderateComments() {
         $pdo = Manager::connectionBdd();
         $req = $pdo->query('SELECT * FROM commentaires ORDER BY id DESC');
         return $req;
-    }
+    } */
 
-    function getComments($postID)
-    {
+    function getComments($postID) {
         $pdo = Manager::connectionBdd();
         $comments = $pdo->prepare('SELECT * FROM commentaires WHERE article_referent= :article_referent ORDER BY date_publish_comm DESC');
         $comments->execute(['article_referent' => $postID]);
         return $comments;
     }
 
-    function postComment($postID, $name, $message)
-    {
+    function postComment($postID, $name, $message){
         $pdo = Manager::connectionBdd();
         $comments = $pdo->prepare('INSERT INTO commentaires(article_referent, date_publish_comm, name, message) VALUES
 (?, NOW(),? ,?)');
@@ -43,5 +41,11 @@ class CommentsManager extends Manager
         ));
         return $comments;
         
+    }
+
+    function afficherDangerComment() {
+        $pdo = Manager::connectionBdd();
+        $commentsDanger = $pdo->query('SELECT * FROM commentaires WHERE danger = 1 ORDER BY date_publish_comm DESC');
+        return $commentsDanger;
     }
 }

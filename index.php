@@ -57,7 +57,7 @@ require 'controllers/back.php';
 
   } elseif ($_GET['action'] == 'comments') {
       if (!empty($_SESSION['name'])) {
-          moderateComments();
+          afficherCommentsDanger();
 
       } else {
           header('Location: index.php');
