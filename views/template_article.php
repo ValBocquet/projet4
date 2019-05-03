@@ -16,7 +16,6 @@
     <link rel="stylesheet" type="text/css"  href='public/css/carouFredSel.css' />
     <link rel="stylesheet" type="text/css"  href='public/css/sm-clean.css' />
     <link rel="stylesheet" type="text/css"  href='public/css/style.css' />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=2x7q7zj8i7ruopg7n8zesj84td2qp2c2yttmsp0qjodlr86b"></script>
 
     <script>

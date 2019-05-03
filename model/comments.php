@@ -67,4 +67,13 @@ class CommentsManager extends Manager
         ));
         return $confirmUpdateComment;
     }
+
+    function deleteComment($id) {
+        $pdo = Manager::connectionBdd();
+        $deleteComment = $pdo->prepare('DELETE FROM commentaires WHERE id = :id');
+        $deleteComment->execute(array(
+            'id' => $id
+        ));
+        return $deleteComment;
+    }
 }

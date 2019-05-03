@@ -3,6 +3,8 @@ session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+$errors = [];
+$success = [];
 require 'controllers/front.php';
 require 'controllers/back.php';
 
@@ -19,19 +21,24 @@ require 'controllers/back.php';
       if(isset($_GET['id']) && $_GET['id'] > 0) {
           if (!empty($_POST['name']) && !empty($_POST['message'])) {
               addComment($_GET['id'], $_POST['name'], $_POST['message']);
+                $success['addComment'] = "Commentaire bien envoyé !";
           }
           else {
               echo 'Problème lors de l\'envoi';
+              $errors['addComment'] = "Problème lors de l'envoi du commentaire";
           }
       }
   } elseif ($_GET['action'] == "administration") {
       if(!empty($_POST['name']) && !empty($_POST['password'])) {
-          if($_POST['name'] == "admin" && $_POST['password'] == "admin") {
+          $pwd = password_hash($_POST['password'], PASSWORD_DEFAULT);
+          if($_POST['name'] == "admin" && $pwd == password_verify('admin', $pwd)) {
               $_SESSION['name'] = $_POST['name'];
               getArticlesInformations();
           }
           else {
               echo 'mauvaise combinaison de connexion';
+              $errors['connexion'] = "Mauvaise combinaison de connexion";
+
           }
 
       } elseif (!empty($_SESSION['name'])) {
@@ -39,6 +46,7 @@ require 'controllers/back.php';
       }
       else {
           echo 'il y a eu un problème lors de la connexion';
+          $errors['session'] = "Problème lors de la connexion";
       }
   }
 
@@ -89,6 +97,12 @@ require 'controllers/back.php';
         elseif ($_GET['action'] == 'confirmUpdateComment') {
             if(!empty($_POST['mytextarea']) && !empty($_GET['id'])) {
                 confirmUpdateComment($_GET['id']);
+                header('Location: index.php');
+            }
+        }
+        elseif ($_GET['action'] == "deleteComment") {
+            if(!empty($_GET['id']) && $_GET['id'] > 0) {
+                deleteComment($_GET['id']);
                 header('Location: index.php');
             }
         }

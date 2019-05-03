@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href='public/css/sm-clean.css'/>
     <link rel="stylesheet" type="text/css" href='public/css/style.css'/>
 
+
     <!--[if lt IE 9]>
     <script src="public/js/html5.js"></script>
     <![endif]-->
@@ -74,7 +75,7 @@
                                 <td class="danger"><?= $datas['name']; ?></td>
                                 <td class="danger"><?= $datas['message']; ?></td>
                                 <td class="danger"><a href="index.php?action=updateComment&id=<?= $datas['id'];?>"><img src="public/images/pencil-alt-solid.svg" id="pencil" alt="pencil"></a></td>
-                                <td class="danger"><a href="#"><img src="public/images/trash-alt-solid.svg" alt="poubelle" id="trash"></a></td>
+                                <td class="danger"><a href="index.php?action=deleteComment&id=<?= $datas['id'];?>"><img src="public/images/trash-alt-solid.svg" alt="poubelle" id="trash"></a></td>
                                 <?php
                             } else {
                                 ?>
@@ -84,7 +85,7 @@
                                 <td><?= $datas['name']; ?></td>
                                 <td><?= $datas['message']; ?></td>
                                 <td><a href="index.php?action=updateComment&id=<?= $datas['id'];?>"><img src="public/images/pencil-alt-solid.svg" id="pencil" alt="pencil"></a></td>
-                                <td><a href="#"><img src="public/images/trash-alt-solid.svg" alt="poubelle" id="trash"></a></td>
+                                <td><a href="index.php?action=deleteComment&id=<?= $datas['id'];?>"><img src="public/images/trash-alt-solid.svg" alt="poubelle" id="trash"></a></td>
                                 <?php
                             }
                             ?>

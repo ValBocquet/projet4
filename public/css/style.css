@@ -964,12 +964,6 @@ body.open .site-content
     animation: pulse 1s infinite;
 }
 
-@keyframes "pulse" {
-    0% { transform: scale(1.1); }
-70% { transform: scale(0.8,0.8); }
-80% { transform: scale(0.9,0.9); }
-100% { transform: scale(1.1);  }
-}
 
 @-moz-keyframes pulse {
     0% { transform: scale(1.1); }

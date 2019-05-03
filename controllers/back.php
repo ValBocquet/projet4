@@ -61,3 +61,9 @@ function confirmUpdateComment($id) {
     $confirmUpdateComment = $Manager->confirmUpdateComment($id);
     return 'ok';
 }
+
+function deleteComment($id) {
+    $Manager = new CommentsManager();
+    $deleteComment = $Manager->deleteComment($id);
+    return 'ok';
+}
