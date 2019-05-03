@@ -1,11 +1,7 @@
 <!-- Left Sidebar -->
 <div id="sidebar" class="sidebar">
     <div class="menu-left-part">
-        <div class="search-holder">
-            <label>
-                <input type="search" class="search-field" placeholder="Type here to search..." value="" name="s" title="Search for:">
-            </label>
-        </div>
+
         <div class="site-info-holder">
             <h1 class="site-title">Suppablog</h1>
             <p class="site-description">
@@ -39,7 +35,7 @@
     </div>
     <div class="menu-right-part">
         <div class="logo-holder">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="public/images/logo.png" alt="Suppablog WP">
             </a>
         </div>

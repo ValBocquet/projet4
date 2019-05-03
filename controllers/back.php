@@ -49,3 +49,15 @@ function afficherCommentsDanger() {
     $moderateComments = $Manager->afficherDangerComment();
     require 'views/moderateComments.php';
 }
+
+function updateComment($id) {
+    $Manager = new CommentsManager();
+    $updateComment = $Manager->updateComment($id);;
+    require 'views/updateComment.php';
+}
+
+function confirmUpdateComment($id) {
+    $Manager = new CommentsManager();
+    $confirmUpdateComment = $Manager->confirmUpdateComment($id);
+    return 'ok';
+}

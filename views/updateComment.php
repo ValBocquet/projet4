@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-    <title><?= $title; ?></title>
+    <title>Administration Panel</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="Template by Colorlib" />
     <meta name="keywords" content="HTML, CSS, JavaScript, PHP" />
@@ -16,9 +16,7 @@
     <link rel="stylesheet" type="text/css"  href='public/css/carouFredSel.css' />
     <link rel="stylesheet" type="text/css"  href='public/css/sm-clean.css' />
     <link rel="stylesheet" type="text/css"  href='public/css/style.css' />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=2x7q7zj8i7ruopg7n8zesj84td2qp2c2yttmsp0qjodlr86b"></script>
-
     <script>
         tinymce.init({
             selector: '#mytextarea'
@@ -39,7 +37,44 @@
 <?php require 'menu.php'; ?>
 
 <!-- Single Content -->
-<?= $content; ?>
+<!-- Single Content -->
+<div id="content" class="site-content center-relative">
+    <div class="single-post-wrapper content-1070 center-relative">
+
+        <article class="center-relative">
+            <h1 class="entry-title">
+
+            </h1>
+            <div class="entry-date published"></div>
+            <div class="clear"></div>
+
+
+            <div class="clear"></div>
+
+                            <div class="commentaires">
+                                <h2>Modification d'un article</h2>
+                                    <?php
+                                        while ($datas = $updateComment->fetch()) {
+                                            ?>
+                                <form action="index.php?action=confirmUpdateComment&id=<?=$datas['id'];?>" method="post">
+
+                                <textarea name="mytextarea" id="mytextarea"><?=$datas['message'];?></textarea>
+                                        <?php }
+                                    ?>
+                                    <input type="submit" value="Poster">
+                                </form>
+                                <div class="clear"></div>
+
+                        </article>
+                    </div>
+                </div>
+                <input type="submit" value="Modifier">
+                </form>
+            <div class="clear"></div>
+
+        </article>
+    </div>
+</div>
 
 
 <!-- Footer -->

@@ -1480,3 +1480,7 @@ table.blueTable tfoot .links a{
 #createArticle {
     text-align: center;
 }
+
+.danger {
+    background: rgba(255,87,51,.8);
+}

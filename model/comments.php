@@ -45,7 +45,26 @@ class CommentsManager extends Manager
 
     function afficherDangerComment() {
         $pdo = Manager::connectionBdd();
-        $commentsDanger = $pdo->query('SELECT * FROM commentaires WHERE danger = 1 ORDER BY date_publish_comm DESC');
+        $commentsDanger = $pdo->query('SELECT * FROM commentaires ORDER BY danger DESC, date_publish_comm DESC');
         return $commentsDanger;
+    }
+
+    function updateComment($id) {
+        $pdo = Manager::connectionBdd();
+        $updateComment = $pdo->prepare('SELECT id, message FROM commentaires WHERE id = :id');
+        $updateComment->execute(array(
+            'id' => $id
+        ));
+        return $updateComment;
+    }
+
+    function confirmUpdateComment($id) {
+        $pdo = Manager::connectionBdd();
+        $confirmUpdateComment = $pdo->prepare('UPDATE commentaires SET message = :message WHERE id = :id');
+        $confirmUpdateComment->execute(array(
+            'message' => $_POST['mytextarea'],
+            'id' => $id
+        ));
+        return $confirmUpdateComment;
     }
 }

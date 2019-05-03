@@ -81,6 +81,18 @@ require 'controllers/back.php';
             dangerComment($_GET['id']);
         }
 
+        elseif ($_GET['action'] == 'updateComment') {
+            if(!empty($_GET['id']) && $_GET['id'] > 0) {
+                updateComment($_GET['id']);
+            }
+        }
+        elseif ($_GET['action'] == 'confirmUpdateComment') {
+            if(!empty($_POST['mytextarea']) && !empty($_GET['id'])) {
+                confirmUpdateComment($_GET['id']);
+                header('Location: index.php');
+            }
+        }
+
   else {
     home();
 }
