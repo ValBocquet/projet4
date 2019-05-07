@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!empty($_SESSION['name'])) {
+    header('Location: ../index.php?action=administration');
+}
 
 ?>
 <!DOCTYPE HTML>

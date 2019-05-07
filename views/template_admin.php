@@ -1,3 +1,8 @@
+<?php
+if(empty($_SESSION['name'])) {
+    session_start();
+}
+?>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>

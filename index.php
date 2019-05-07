@@ -45,8 +45,7 @@ require 'controllers/back.php';
           getArticlesInformations();
       }
       else {
-          echo 'il y a eu un problème lors de la connexion';
-          $errors['session'] = "Problème lors de la connexion";
+          header('Location: index.php');
       }
   }
 
@@ -82,7 +81,11 @@ require 'controllers/back.php';
             }
         }
         elseif($_GET['action'] == "newArticle") {
-            newArticle();
+            if(!empty($_SESSION['name'])) {
+                newArticle();
+            } else {
+                header('Location: index.php?action=administration');
+            }
         }
 
         elseif($_GET['action'] == 'danger') {
