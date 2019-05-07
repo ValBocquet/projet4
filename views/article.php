@@ -23,9 +23,11 @@ ob_start();
                 while ($comment = $comments->fetch()){
                     $dateComm = date_format(new DateTime($comment['date_publish_comm']), 'd-m-Y');
                     ?>
-                    <p><?= htmlspecialchars($comment['name'])?> le <?= $dateComm; ?> : </p>
-                    <p><?= htmlspecialchars($comment['message'])?></p>
-                    <a href="index.php?action=danger&id=<?= $comment['id'];?>"><img src="public/images/exclamation-triangle-solid.svg" alt="danger icon" id="pencil" </a>
+                    <div class="commentaire">
+                        <a href="index.php?action=danger&id=<?= $comment['id'];?>"><img src="public/images/exclamation-triangle-solid.svg" alt="danger icon" id="danger"> </a>
+                        <p><?= htmlspecialchars($comment['name'])?> le <?= $dateComm; ?> : </p>
+                        <p><?= htmlspecialchars($comment['message'])?></p>
+                    </div>
                     <hr>
                 <?php
                 }

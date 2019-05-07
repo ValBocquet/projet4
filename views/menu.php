@@ -10,7 +10,7 @@
         </div>
         <nav id="header-main-menu">
             <ul class="main-menu sm sm-clean">
-                <li><a href="index.php" class="current">Home</a></li>
+                <li><a href="../index.php" class="current">Home</a></li>
                 <?php if (!empty($_SESSION['name'])) {
                     ?>
                     <li><a href="index.php?action=administration">Panel</a></li>
