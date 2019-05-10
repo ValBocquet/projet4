@@ -10,18 +10,18 @@
         </div>
         <nav id="header-main-menu">
             <ul class="main-menu sm sm-clean">
-                <li><a href="../index.php" class="current">Home</a></li>
+                <li><a href="index.php" class="current">Home</a></li>
                 <?php if (!empty($_SESSION['name'])) {
                     ?>
                     <li><a href="index.php?action=administration">Panel</a></li>
-                    <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
                     <li><a href="index.php?action=comments">Les commentaires</a></li>
+                    <li><a href="index.php?action=deconnexion">Déconnexion</a></li>
 
                     <?php
                 } else {
 
                     ?>
-                    <li><a href="views/administration.php">Administration</a></li>
+                    <li><a href="index.php?action=connexion">Administration</a></li>
                     <?php
                 }
                 ?>
@@ -29,7 +29,8 @@
         </nav>
         <footer>
             <div class="footer-info">
-                © 2018 SUPPABLOG HTML TEMPLATE. <br> CRAFTED WITH <i class="fa fa-heart"></i> BY <a href="https://colorlib.com">COLORLIB</a>.
+                © 2018 SUPPABLOG HTML TEMPLATE. <br> CRAFTED WITH <i class="fa fa-heart"></i> BY <a
+                        href="https://colorlib.com">COLORLIB</a>.
             </div>
         </footer>
     </div>

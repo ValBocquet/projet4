@@ -43,7 +43,6 @@
 
         </div>
         <div class="clear"></div>
-        <div class="block load-more-holder">LOAD MORE ENTRIES</div>
     </div>
 
     <div class="featured-image-holder">

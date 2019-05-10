@@ -67,3 +67,7 @@ function deleteComment($id) {
     $deleteComment = $Manager->deleteComment($id);
     return 'ok';
 }
+
+function connexion() {
+    require 'views/administration.php';
+}

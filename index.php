@@ -107,6 +107,14 @@ require 'controllers/back.php';
             }
         }
 
+        elseif($_GET['action'] == "connexion") {
+            if (empty($_SESSION['name'])) {
+                connexion();
+            } else {
+                header('Location: index.php?action=administration');
+            }
+        }
+
   else {
     home();
 }
