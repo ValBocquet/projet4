@@ -1,3 +1,8 @@
+<?php
+if(!empty($_SESSION['name'])) {
+    header('Location: ../index.php?action=administration');
+}
+?>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
