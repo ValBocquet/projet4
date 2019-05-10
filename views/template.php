@@ -30,7 +30,7 @@
 <!-- Preloader Gif -->
 
 <!-- Left Sidebar -->
-<?php require 'views/menu.php'; ?>
+<?php require 'menu.php'; ?>
 
 <!-- Home Content -->
 <div id="content" class="site-content">

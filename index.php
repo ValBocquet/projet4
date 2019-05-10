@@ -3,8 +3,7 @@ session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-$errors = [];
-$success = [];
+
 require 'controllers/front.php';
 require 'controllers/back.php';
 
@@ -21,7 +20,8 @@ require 'controllers/back.php';
       if(isset($_GET['id']) && $_GET['id'] > 0) {
           if (!empty($_POST['name']) && !empty($_POST['message'])) {
               addComment($_GET['id'], $_POST['name'], $_POST['message']);
-                $success['addComment'] = "Commentaire bien envoyé !";
+                $_SESSION['message'] = "Commentaire bien envoyé !";
+                // header('Location: views/confirm.php');
           }
           else {
               echo 'Problème lors de l\'envoi';
@@ -33,6 +33,7 @@ require 'controllers/back.php';
           $pwd = password_hash($_POST['password'], PASSWORD_DEFAULT);
           if($_POST['name'] == "admin" && $pwd == password_verify('admin', $pwd)) {
               $_SESSION['name'] = $_POST['name'];
+              header('Location: index.php?action=administration'); // permet d'éviter le souci de cache
               getArticlesInformations();
           }
           else {
@@ -112,7 +113,7 @@ require 'controllers/back.php';
 
         elseif($_GET['action'] == "connexion") {
             if (empty($_SESSION['name'])) {
-                connexion();
+                connexion(); // renvoi le panel car déjà connecté
             } else {
                 header('Location: index.php?action=administration');
             }
