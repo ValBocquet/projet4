@@ -8,6 +8,21 @@ ob_start();
 <div id="content" class="site-content center-relative">
     <div class="single-post-wrapper content-1070 center-relative">
 
+    <?php
+        if(!empty($_SESSION['status'])) {
+            
+        ?>    
+            <div id="status">
+                <p>
+                    <i class="fas fa-times-circle" id="croix"></i>
+                    <?=$_SESSION['status']?>
+                </p>
+            </div> 
+        <?php
+        
+        }
+    ?>
+
         <article class="center-relative">
             <h1 class="entry-title">
                 <?= $post['title']; ?>
@@ -24,7 +39,7 @@ ob_start();
                     $dateComm = date_format(new DateTime($comment['date_publish_comm']), 'd-m-Y');
                     ?>
                     <div class="commentaire">
-                        <a href="index.php?action=danger&id=<?= $comment['id'];?>"><img src="public/images/exclamation-triangle-solid.svg" alt="danger icon" id="danger"> </a>
+                        <a href="index.php?action=danger&id=<?= $comment['id'];?>"><i class="fas fa-exclamation-triangle" id="danger"></i></a>
                         <p><?= htmlspecialchars($comment['name'])?> le <?= $dateComm; ?> : </p>
                         <p><?= htmlspecialchars($comment['message'])?></p>
                     </div>
@@ -51,6 +66,6 @@ ob_start();
 </div>
 <?php
 
-
+unset($_SESSION['status']);
 $content = ob_get_clean();
 require 'template_article.php'; ?>

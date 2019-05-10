@@ -47,15 +47,15 @@
         </div>
         <div class="social-holder">
             <div class="social-list">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-youtube-play"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-vimeo"></i></a>
-                <a href="#"><i class="fa fa-behance"></i></a>
-                <a href="#"><i class="fa fa-rss"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-vimeo"></i></a>
+                <a href="#"><i class="fab fa-behance"></i></a>
+                <a href="#"><i class="fas fa-rss"></i></a>
             </div>
         </div>
-        <div class="fixed scroll-top"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></div>
+        <div class="fixed scroll-top"><i class="fab fa-caret-square-o-up" aria-hidden="true"></i></div>
     </div>
     <div class="clear"></div>
 </div>

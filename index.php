@@ -21,7 +21,6 @@ require 'controllers/back.php';
           if (!empty($_POST['name']) && !empty($_POST['message'])) {
               addComment($_GET['id'], $_POST['name'], $_POST['message']);
                 $_SESSION['message'] = "Commentaire bien envoyé !";
-                // header('Location: views/confirm.php');
           }
           else {
               echo 'Problème lors de l\'envoi';
@@ -107,7 +106,7 @@ require 'controllers/back.php';
         elseif ($_GET['action'] == "deleteComment") {
             if(!empty($_GET['id']) && $_GET['id'] > 0) {
                 deleteComment($_GET['id']);
-                header('Location: index.php');
+                header('Location: index.php?action=comments');
             }
         }
 

@@ -26,7 +26,8 @@ function addComment($postID, $name, $message) {
     if ($affectedLines === false) {
         die('Impossible d\'ajouter le commentaire');
     } else {
-        header('Location: index.php?id=' . $postID. 'action=getPost');
+        $_SESSION['status'] = "Commentaire bien ajouté !";
+        header('Location: index.php?id=' . $postID. '&action=getPost');
     }
 
 }
