@@ -58,8 +58,8 @@ if(empty($_SESSION['name'])) {
                     <tr>
                         <td><?= $datas['title'];?> (id = <?= $datas['id'];?>)</td>
                         <td><a href="index.php?id=<?= $datas['id'];?>&action=getPost">Lire</a></td>
-                        <td><a href="index.php?id=<?= $datas['id'];?>&action=modify"><img src="public/images/pencil-alt-solid.svg" id="pencil" alt="pencil"></a></td>
-                        <td><a href="index.php?id=<?= $datas['id'];?>&action=deleteArticle"><img src="public/images/trash-alt-solid.svg" alt="poubelle" id="trash"></a></td>
+                        <td><a href="index.php?id=<?= $datas['id'];?>&action=modify"><i class="fas fa-pencil-alt" id="pencil"></i></a></td>
+                        <td><a href="index.php?id=<?= $datas['id'];?>&action=deleteArticle"><i class="fas fa-trash" id="trash"></i></a></td>
                     </tr>
                     </tbody>
                 </table>
