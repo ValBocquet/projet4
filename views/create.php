@@ -6,7 +6,8 @@ ob_start();
 
 <div id="content" class="site-content center-relative">
     <div class="single-post-wrapper content-1070 center-relative">
-
+    
+    
         <article class="center-relative">
             <h1 class="entry-title">
 
@@ -18,7 +19,7 @@ ob_start();
             <div class="clear"></div>
             <div class="commentaires">
                 <h2>Création d'un article</h2>
-                <form action="../index.php?action=createArticle" method="post">
+                <form action="index.php?action=createArticle" method="post">
                     <label for="title">Titre : </label><input type="text" name="title" id="title">
                     <textarea name="mytextarea" id="mytextarea"></textarea>
                     <input type="submit" value="Poster">

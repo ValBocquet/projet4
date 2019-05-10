@@ -8,21 +8,6 @@ ob_start();
 <div id="content" class="site-content center-relative">
     <div class="single-post-wrapper content-1070 center-relative">
 
-    <?php
-        if(!empty($_SESSION['status'])) {
-            
-        ?>    
-            <div id="status">
-                <p>
-                    <i class="fas fa-times-circle" id="croix"></i>
-                    <?=$_SESSION['status']?>
-                </p>
-            </div> 
-        <?php
-        
-        }
-    ?>
-
         <article class="center-relative">
             <h1 class="entry-title">
                 <?= $post['title']; ?>

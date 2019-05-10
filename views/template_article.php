@@ -23,6 +23,7 @@
 <?php require 'menu.php'; ?>
 
 <!-- Single Content -->
+
 <?= $content; ?>
 
 

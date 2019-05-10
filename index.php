@@ -6,8 +6,7 @@ error_reporting(E_ALL);
 
 require 'controllers/front.php';
 require 'controllers/back.php';
-
-  if (empty($_GET['action'])) {
+if (empty($_GET['action'])) {
         home();
     } elseif ($_GET['action'] == 'getPost') {
         if (isset($_GET['id']) && $_GET['id'] > 0) {

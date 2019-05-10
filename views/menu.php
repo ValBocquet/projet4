@@ -3,9 +3,9 @@
     <div class="menu-left-part">
 
         <div class="site-info-holder">
-            <h1 class="site-title">Suppablog</h1>
+            <h1 class="site-title">Jean Forteroche</h1>
             <p class="site-description">
-                Suppablog is simple and yet cool wordpress theme to lorem ipsum dolor sit.
+                Blog destiné à l'auteur du livre Billet simple pour l'Alaska.
             </p>
         </div>
         <nav id="header-main-menu">

@@ -14,6 +14,7 @@ function deleteArticle($id) {
 
     $deleteComment = $ManagerComment->deleteCommentsByArticle($id);
     $deleteArticle = $ManagerArticle->deleteArticle($id);
+    $_SESSION['status'] = "Article bien supprimé !";
 
     return 'Cest good';
 }
@@ -26,7 +27,7 @@ function modifyArticle($id) {
 function valideModifArticle($id) {
     $Manager = new ArticlesManager();
     $validModif = $Manager->valideModifArticle($id);
-    return 'Ok';
+    $_SESSION['status'] = "Article bien modifié !";
 }
 function newArticle() {
     require 'views/create.php';
@@ -36,6 +37,7 @@ function createArticle() {
     $Manager = new ArticlesManager();
     $createArticle = $Manager->createArticle();
     return 'Ok';
+    $_SESSION['status'] = "Article bien publié !";
 }
 
 /* function moderateComments() {
@@ -60,12 +62,14 @@ function confirmUpdateComment($id) {
     $Manager = new CommentsManager();
     $confirmUpdateComment = $Manager->confirmUpdateComment($id);
     return 'ok';
+    $_SESSION['status'] = "Commentaire mis à jour";
 }
 
 function deleteComment($id) {
     $Manager = new CommentsManager();
     $deleteComment = $Manager->deleteComment($id);
     return 'ok';
+    $_SESSION['status'] = "Commentaire supprimé !";
 }
 
 function connexion() {
