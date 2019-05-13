@@ -7,7 +7,7 @@ ob_start();
 while ($datas = $posts->fetch()) {
     $dateUpload = date_format(new DateTime($datas['date_upload']), 'd-m-Y');
     ?>
-    <article id="post-1" class="blog-item-holder featured-post">
+    <article class="blog-item-holder featured-post">
                         <div class="entry-content relative">
                             <div class="content-1170 center-relative">
 
