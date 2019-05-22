@@ -18,7 +18,6 @@ while ($datas = $posts->fetch()) {
                                 <div class="excerpt">
                                     <?php $excerpt = substr($datas['content'], 0, 250); ?>
                                     <?= $excerpt; ?>
-                                    <a class="read-more" href="article.php?id=<?= $datas['id'] ?>"></a>
                                 </div>
                                 <div class="clear"></div>
                             </div>
