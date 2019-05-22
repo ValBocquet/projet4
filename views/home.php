@@ -19,7 +19,9 @@ while ($datas = $posts->fetch()) {
                                     <?php $excerpt = substr($datas['content'], 0, 250); ?>
                                     <?= $excerpt; ?>
                                 </div>
-                                <div class="clear"></div>
+                                <div class="clear">
+
+                                </div>
                             </div>
                         </div>
     </article>
