@@ -24,10 +24,9 @@ function addComment($postID, $name, $message) {
     $affectedLines = $Manager->postComment($postID, $name, $message);
 
     if ($affectedLines === false) {
-        die('Impossible d\'ajouter le commentaire');
+        $_SESSION['message'] = "Erreur lors de l'envoi du commentaire";
     } else {
-        $_SESSION['status'] = "Commentaire bien ajouté !";
-        header('Location: index.php?id=' . $postID. '&action=getPost');
+        $_SESSION['message'] = "Commentaire bien ajouté !";
     }
 
 }

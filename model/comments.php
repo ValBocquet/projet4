@@ -10,13 +10,7 @@ class CommentsManager extends Manager
             'id' => $idArticle
         ));
         return $req;
-    } 
-
-    /* public function moderateComments() {
-        $pdo = Manager::connectionBdd();
-        $req = $pdo->query('SELECT * FROM commentaires ORDER BY id DESC');
-        return $req;
-    } */
+    }
 
     function getComments($postID) {
         $pdo = Manager::connectionBdd();

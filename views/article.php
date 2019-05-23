@@ -9,6 +9,18 @@ ob_start();
     <div class="single-post-wrapper content-1070 center-relative">
 
         <article class="center-relative">
+            <?php
+                if(!empty($_SESSION['message'])) {
+
+                    ?>
+
+                    <span class="dangerMessage"><?= $_SESSION['message']; ?></span>
+                    <?php unset($_SESSION['message']);
+
+                }
+
+
+            ?>
             <h1 class="entry-title">
                 <?= $post['title']; ?>
             </h1>
@@ -24,7 +36,7 @@ ob_start();
                     $dateComm = date_format(new DateTime($comment['date_publish_comm']), 'd-m-Y');
                     ?>
                     <div class="commentaire">
-                        <a href="index.php?action=danger&id=<?= $comment['id'];?>"><i class="fas fa-exclamation-triangle" id="danger"></i></a>
+                        <a href="index.php?action=danger&ref=<?= $_GET['id'];?>&id=<?= $comment['id'];?>"><i class="fas fa-exclamation-triangle" id="danger"></i></a>
                         <p><?= htmlspecialchars($comment['name'])?> le <?= $dateComm; ?> : </p>
                         <p><?= htmlspecialchars($comment['message'])?></p>
                     </div>
@@ -37,7 +49,7 @@ ob_start();
             </div>
                 <div class="commentaire">
                     <div class="contact-form">
-                        <form method="post" action="index.php?id=<?= $post['id']; ?>&amp;action=addComment ">
+                        <form method="post" action="index.php?id=<?= $post['id']; ?>&action=addComment ">
                             <p><input id="name" type="text" name="name" placeholder="Name"></p>
                             <p><textarea id="message" name="message" placeholder="Message"></textarea></p>
                             <p><input type="submit" value="Ajouter le commentaire"></p>

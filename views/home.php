@@ -9,6 +9,18 @@ while ($datas = $posts->fetch()) {
     ?>
     <article class="blog-item-holder featured-post">
                         <div class="entry-content relative">
+                            <?php
+                            if(!empty($_SESSION['message'])) {
+
+                                ?>
+
+                                <span class="dangerMessage"><?= $_SESSION['message']; ?></span>
+                                <?php unset($_SESSION['message']);
+
+                            }
+
+
+                            ?>
                             <div class="content-1170 center-relative">
 
                                 <div class="entry-date published"><?= $dateUpload ?></div>

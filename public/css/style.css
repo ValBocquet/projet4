@@ -1470,6 +1470,13 @@ table.blueTable tfoot .links a{
     text-align: center;
 }
 
+.dangerMessage {
+    background: rgba(255,87,51,.8);
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    display: block;
+}
 .danger {
     background: rgba(255,87,51,.8);
 }

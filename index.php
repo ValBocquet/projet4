@@ -19,7 +19,7 @@ if (empty($_GET['action'])) {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 articleOnly();
             } else {
-                echo 'Erreur : aucun identifiant de billet envoyé';
+                $_SESSION['message'] = 'Erreur : aucun identifiant de billet envoyé';
             }
             break;
         case "addComment":
@@ -27,9 +27,10 @@ if (empty($_GET['action'])) {
                 if (!empty($_POST['name']) && !empty($_POST['message'])) {
                     addComment($_GET['id'], $_POST['name'], $_POST['message']);
                     $_SESSION['message'] = "Commentaire bien envoyé !";
+                    header('Location: index.php?id=' .$_GET['id']. '&action=getPost');
                 } else {
-                    echo 'Problème lors de l\'envoi';
-                    $errors['addComment'] = "Problème lors de l'envoi du commentaire";
+                    $_SESSION['message'] = "Problème lors de l'envoi du commentaire";
+                    header('Location: index.php?id=' .$_GET['id']. '&action=getPost');
                 }
             }
             break;
@@ -55,14 +56,13 @@ if (empty($_GET['action'])) {
         case "deleteArticle":
             if (!empty($_GET['id']) && $_GET['id'] > 0) {
                 deleteArticle(intval($_GET['id']));
+                $_SESSION['message'] = "Article supprimé";
                 header('Location: index.php');
             }
             break;
         case "deconnexion":
-            if (!empty($_GET['id']) && $_GET['id'] > 0) {
-                deleteArticle(intval($_GET['id']));
-                header('Location: index.php');
-            }
+            session_destroy();
+            header('Location: index.php');
             break;
         case "comments":
             if (!empty($_SESSION['name'])) {
@@ -75,6 +75,7 @@ if (empty($_GET['action'])) {
         case "validModif":
             if (!empty($_GET['id']) && $_GET['id'] > 0) {
                 valideModifArticle($_GET['id']);
+                $_SESSION['message'] = "Article bien modifié";
                 header('Location: index.php?id=' . $_GET['id'] . '&action=getPost');
             }
             break;
@@ -91,8 +92,15 @@ if (empty($_GET['action'])) {
                 header('Location: index.php?action=administration');
             }
             break;
+        case "modify":
+            if (!empty($_GET['id']) && $_GET['id'] > 0) {
+                modifyArticle($_GET['id']);
+            }
+            break;
         case "danger":
             dangerComment($_GET['id']);
+            $_SESSION['message'] = "Commentaire signalé à l'administrateur";
+            header('Location: index.php?id=' . $_GET['ref'] . '&action=getPost');
             break;
         case "updateComment":
             if (!empty($_GET['id']) && $_GET['id'] > 0) {
